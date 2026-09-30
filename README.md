@@ -132,7 +132,7 @@ Evaluation was performed on the held-out test set.
 
 | Accuracy | 99.23% |
 
-| ROC-AUC  | 0.9947 |
+| ROC-AUC  | 0.9946 |
 
 
 
