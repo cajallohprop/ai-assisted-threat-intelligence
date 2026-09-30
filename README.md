@@ -133,6 +133,31 @@ The project also generates a visualization of the learned coefficients:
 
 This provides a simple way for analysts to inspect which URL characteristics have the strongest influence on the baseline model.
 
+## CTI IOC Analysis
+
+The project also includes a lightweight IOC analysis workflow designed from a CTI analyst perspective.
+
+The workflow accepts IP addresses, domains and URLs and performs:
+
+1. **IOC enrichment** — retrieves the indicator type, source, confidence, timestamps and threat category from the sample CTI dataset.
+2. **Risk scoring** — calculates an explainable risk score using the intelligence confidence and threat category.
+3. **Analyst summary** — combines enrichment and risk information into a single analyst-readable result.
+4. **Batch analysis** — processes multiple IOCs from a CSV file and produces a structured analysis table.
+
+Example workflow:
+
+```text
+IOC
+ ↓
+IOC Enrichment
+ ↓
+Confidence + Threat Category
+ ↓
+Risk Scoring
+ ↓
+Analyst Summary
+```
+
 ## Limitations
 
 This is an initial baseline rather than a production phishing-detection system.
@@ -154,9 +179,9 @@ Planned improvements include:
 1. Refine URL feature engineering.
 2. Evaluate additional tree-based and ensemble models.
 3. Perform additional validation using temporally separated or external datasets.
-4. Add precision, recall, F1-score and ROC curves.
-5. Add model explainability.
-6. Develop IOC enrichment and correlation capabilities.
+4. Extend evaluation with threshold analysis and external validation.
+5. Expand model explainability.
+6. Integrate additional CTI data sources and enrichment methods.
 7. Explore integration with CTI workflows and threat-intelligence platforms.
 8. Investigate AI-assisted analyst workflows for resource-constrained CSIRT environments.
 
