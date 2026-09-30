@@ -1,0 +1,15 @@
+url,label
+https://www.example.com,0
+https://www.wikipedia.org/wiki/Cybersecurity,0
+https://www.microsoft.com/security,0
+https://www.google.com/search?q=cybersecurity,0
+https://www.github.com/cajallohprop,0
+https://www.cloudflare.com/security,0
+http://secure-login.example.com/account,1
+http://verify-account.example.com/login,1
+http://192.168.1.10/login,1
+http://example.com/free-prize?user=123&verify=true,1
+http://account-security.example.com/update-password,1
+http://login.example.com@192.168.1.10/auth,1
+http://example.com/verify/account/password/reset,1
+http://secure.example.com/login?session=123456&redirect=true,1
