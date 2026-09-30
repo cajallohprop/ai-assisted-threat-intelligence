@@ -93,16 +93,18 @@ The relatively small standard deviations indicate consistent performance across 
 
 ### Model Comparison
 
-The baseline Logistic Regression model was compared with a Random Forest classifier using the same 80/20 stratified train/test split.
+The baseline Logistic Regression model was compared with a Random Forest classifier using **5-fold stratified cross-validation** on the full processed dataset.
 
-| Model               | Accuracy | F1-score | ROC-AUC |
-| ------------------- | -------: | -------: | ------: |
-| Logistic Regression |   0.9923 |   0.9910 |  0.9946 |
-| Random Forest       |   0.9949 |   0.9940 |  0.9969 |
+| Model | Accuracy | Precision | Recall | F1-score | ROC-AUC |
+|---|---:|---:|---:|---:|---:|
+| Logistic Regression | 0.9926 | 0.9992 | 0.9834 | 0.9912 | 0.9950 |
+| Random Forest | 0.9948 | 0.9987 | 0.9890 | 0.9939 | 0.9970 |
 
-In this experiment, the Random Forest produced higher scores across the three reported metrics. This comparison is specific to the dataset, feature set, and evaluation split used in this project and does not establish real-world superiority.
+The Random Forest produced higher mean accuracy, recall, F1-score and ROC-AUC in this cross-validation experiment, while Logistic Regression produced slightly higher mean precision.
 
-The model achieved high performance on this dataset, but these results should **not** be interpreted as evidence that the model will achieve the same performance against real-world or previously unseen phishing campaigns.
+The results are specific to the PhiUSIIL dataset, the selected URL features and the evaluation methodology used in this project. They do not establish that either model will perform better against real-world or previously unseen phishing campaigns.
+
+The standard deviations across the five folds were small for both models, indicating relatively consistent performance across the validation folds on this dataset.
 
 ## Feature Analysis
 
