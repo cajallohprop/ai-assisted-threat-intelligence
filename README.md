@@ -150,6 +150,20 @@ Actual Benign  26953      17
 
 Actual Phishing 344   19845
 
+### 5-Fold Cross-Validation
+
+To assess the stability of the baseline model, stratified 5-fold cross-validation was performed on the full processed dataset.
+
+| Metric | Mean | Std. Dev. |
+|---|---:|---:|
+| Accuracy | 0.9926 | 0.0005 |
+| Precision | 0.9992 | 0.0002 |
+| Recall | 0.9834 | 0.0010 |
+| F1-score | 0.9912 | 0.0006 |
+| ROC-AUC | 0.9950 | 0.0003 |
+
+The relatively small standard deviations indicate consistent performance across the five validation folds on this dataset. However, cross-validation does not eliminate the possibility of dataset-specific patterns or distribution differences in real-world phishing campaigns.
+
 ```
 
 
