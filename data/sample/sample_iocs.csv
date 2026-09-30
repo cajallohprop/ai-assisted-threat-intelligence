@@ -1,0 +1,7 @@
+indicator,indicator_type,source,confidence,first_seen,last_seen,threat_category
+198.51.100.23,ip,Example Threat Feed,85,2026-08-01,2026-09-20,Command and Control
+203.0.113.45,ip,Example Threat Feed,72,2026-08-15,2026-09-25,Scanning
+secure-login-example.com,domain,Example Phishing Feed,92,2026-09-01,2026-09-28,Phishing
+account-verification-example.net,domain,Example Phishing Feed,88,2026-09-05,2026-09-27,Phishing
+http://login-example.test/verify,url,Example URL Feed,95,2026-09-10,2026-09-29,Credential Theft
+http://update-example.test/download,url,Example URL Feed,81,2026-09-12,2026-09-26,Malware Delivery
