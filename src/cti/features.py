@@ -10,7 +10,7 @@ def extract_url_features(url: str) -> dict:
         "url_length": len(url),
         "hostname_length": len(parsed.hostname or ""),
         "path_length": len(parsed.path),
-        "num_dots": url.count("."),
+        "num_dots": (parsed.hostname or "").count("."),
         "num_hyphens": url.count("-"),
         "num_slashes": url.count("/"),
         "num_question_marks": url.count("?"),

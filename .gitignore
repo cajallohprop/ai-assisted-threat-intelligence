@@ -23,3 +23,7 @@ Thumbs.db
 # IDE/editor files
 .vscode/
 .idea/
+
+# Local datasets
+data/raw/
+data/processed/
