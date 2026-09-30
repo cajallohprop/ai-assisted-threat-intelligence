@@ -106,19 +106,32 @@ The results are specific to the PhiUSIIL dataset, the selected URL features and 
 
 The standard deviations across the five folds were small for both models, indicating relatively consistent performance across the validation folds on this dataset.
 
-## Feature Analysis
+### Feature Analysis
 
-The logistic regression coefficients provide an initial view of which features are associated with the model's predictions.
+To improve model interpretability, the project analyzes the coefficients learned by the Logistic Regression model after training on the full processed dataset.
 
-The strongest coefficients in the current experiment include:
+For standardized features, a **positive coefficient** indicates an association with the model's phishing class (`1`), while a **negative coefficient** indicates an association with the benign class (`0`). The magnitude of the coefficient reflects the feature's relative contribution to the model's decision within this feature set.
 
-* Number of URL path slashes
-* HTTPS usage
-* Number of hyphens
-* Hostname length
-* Path length
+The strongest coefficient associations were:
 
-These coefficients represent statistical associations learned by the model. They should not be interpreted as evidence that a particular URL characteristic directly causes a URL to be malicious.
+| Feature              | Coefficient | Direction           |
+| -------------------- | ----------: | ------------------- |
+| `num_slashes`        |    +11.8692 | Phishing-associated |
+| `uses_https`         |     −6.2004 | Benign-associated   |
+| `num_hyphens`        |     +1.5105 | Phishing-associated |
+| `hostname_length`    |     +1.2427 | Phishing-associated |
+| `path_length`        |     +0.7111 | Phishing-associated |
+| `num_question_marks` |     +0.6726 | Phishing-associated |
+| `url_length`         |     +0.5017 | Phishing-associated |
+| `num_at_symbols`     |     +0.2836 | Phishing-associated |
+
+These coefficients describe associations learned from the PhiUSIIL dataset and should not be interpreted as causal relationships or universal indicators of phishing. For example, HTTPS is widely used by legitimate websites as well as malicious websites, so the negative `uses_https` coefficient reflects a dataset-specific model pattern rather than a security rule.
+
+The project also generates a visualization of the learned coefficients:
+
+`reports/logistic_feature_coefficients.png`
+
+This provides a simple way for analysts to inspect which URL characteristics have the strongest influence on the baseline model.
 
 ## Limitations
 
